@@ -13,8 +13,8 @@ function App() {
   })
 
   const [stats, setStats] = useState({
-    followers: 100,
-    following: 1000
+    followers: 10,
+    following: 10
   })
 
   const changeAvatar = (url) => {
@@ -25,6 +25,8 @@ function App() {
     let newName = prompt('Want to change your name? Enter new');
     setUser(user => ({...user, name: newName}))
   }
+
+
 
   return (
     <div className='app'>

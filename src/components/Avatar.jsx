@@ -3,7 +3,7 @@ import { TwitterContext } from '../utils/context'
 
 const Avatar = ({ size }) => {
 
-  const { user, changeAvatar, setName } = useContext(TwitterContext)
+  const { user, setName } = useContext(TwitterContext)
 
   return (
     <img className={`user-avatar ${size ?? ''}`}
