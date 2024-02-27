@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Body from './components/Body'
 import Navigation from './components/Navigation'
@@ -22,15 +22,15 @@ function App() {
   }
 
   const setName = () => {
-  let newName = prompt('Want to change your name? Enter new');
-  user.name = newName
+    let newName = prompt('Want to change your name? Enter new');
+    setUser(user => ({...user, name: newName}))
   }
 
   return (
     <div className='app'>
       <TwitterContext.Provider value={{
         /*user: user,
-        stats: stats*/ 
+        stats: stats*/
         user, stats, changeAvatar, setName
       }}>
         <Navigation />

@@ -9,7 +9,7 @@ const Avatar = ({ size }) => {
     <img className={`user-avatar ${size ?? ''}`}
       src={user.avatar}
       alt={user.name}
-      onClick={() => setName(user.name)}
+      onClick={setName}
     />
   )
 }

@@ -9,11 +9,6 @@ const Stats = () => {
   let [followS, setFolowS] = useState(stats.followers);
   let [followG, setFolowG] = useState(stats.following);
 
-
-  useEffect(() => {
-    setFolowS(stats.followers)
-  }, [])
-
   const myactionS = (e) => {
     console.log(e);
     setFolowS(stats.followers++)
