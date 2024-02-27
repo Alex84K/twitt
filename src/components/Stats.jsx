@@ -6,16 +6,22 @@ const Stats = () => {
 
   const { user, stats } = useContext(TwitterContext);
 
-  let [followS, setFolowS] = useState(stats.followers)
+  let [followS, setFolowS] = useState(stats.followers);
+  let [followG, setFolowG] = useState(stats.following);
 
 
   useEffect(() => {
     setFolowS(stats.followers)
   }, [])
 
-  const myaction = (e) => {
+  const myactionS = (e) => {
     console.log(e);
     setFolowS(stats.followers++)
+  }
+
+  const myactionG = (e) => {
+    console.log(e);
+    setFolowG(stats.following++)
   }
 
   function handleRightClick(e){
@@ -32,8 +38,9 @@ const Stats = () => {
         {user.name}
       </div>
       <div className='stats'>
-        <div onContextMenu={handleRightClick} >Followers: {followS}</div>
-        <div>Following: {stats.following}</div>
+        {/*<div onContextMenu={handleRightClick} >Followers: {followS}</div>*/}
+        <div onClick={myactionS} >Followers: {followS}</div>
+        <div onClick={myactionG}>Following: {followG}</div>
       </div>
     </div>
   )
